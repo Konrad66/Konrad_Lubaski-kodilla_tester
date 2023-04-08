@@ -11,5 +11,6 @@ public class Main {
 
         String text = "Hello from FirstClass!";
         System.out.println(text);
+
     }
 }
