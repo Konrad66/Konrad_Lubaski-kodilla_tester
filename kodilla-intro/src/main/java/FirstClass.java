@@ -36,5 +36,29 @@ public class FirstClass {
         newNotebook.checkRam();
 
 
+
+        int promien;
+        double pi = 3.14;
+
+        System.out.println("Podaj prodmien koła:");
+        promien = getInt();
+        System.out.println("Pole koła wynosi: " + pi * promien * promien);
+
+
+        String slowo;
+
+        System.out.println("Podaj słowo");
+        slowo = getString();
+        System.out.println(slowo.toUpperCase());
     }
+    public static String getString(){
+        return new Scanner(System.in).next();
+
+    }
+
+    public static int getInt(){
+        return new Scanner(System.in).nextInt();
+    }
+
+
 }
