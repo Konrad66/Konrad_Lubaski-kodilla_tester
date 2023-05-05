@@ -1,8 +1,12 @@
+import com.kodilla.Application;
 import com.kodilla.Notebook;
+import com.kodilla.User;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class FirstClass {
+
     public static void main(String[] args) {
         System.out.println("Hello from FirstClass!");
 
@@ -37,28 +41,24 @@ public class FirstClass {
 
 
 
-        int promien;
-        double pi = 3.14;
+        User[] users = new User[6];
 
-        System.out.println("Podaj prodmien koła:");
-        promien = getInt();
-        System.out.println("Pole koła wynosi: " + pi * promien * promien);
+        users[0] = new User("Konrad", 24);
+        users[1] = new User("Wiktoria", 22);
+        users[2] = new User("Beata", 35);
+        users[3] = new User("Przemysław", 48);
+        System.out.println(users[0]);
 
 
-        String slowo;
 
-        System.out.println("Podaj słowo");
-        slowo = getString();
-        System.out.println(slowo.toUpperCase());
+
+
+
+
+
+        Random value = new Random();
     }
-    public static String getString(){
-        return new Scanner(System.in).next();
 
-    }
-
-    public static int getInt(){
-        return new Scanner(System.in).nextInt();
-    }
 
 
 }

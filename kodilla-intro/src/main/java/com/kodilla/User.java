@@ -11,7 +11,10 @@ public class User {
     }
 
 
-    public static void main(String[] args){
+
+
+
+    public static void main(String[] args) {
 
         User Konrad = new User("Konrad", 24);
         User Wiktoria = new User("Wiktoria", 22);
@@ -26,25 +29,17 @@ public class User {
         int numberOfElements = users1.length;
 
         int result = 0;
-        for(int i = 0; i < users1.length; i++){
+        for (int i = 0; i < users1.length; i++) {
             result = result + users1[i];
         }
         int avarage = result / users1.length;
-        System.out.println(avarage);
+        System.out.println("Avarage of age is: " + avarage);
 
 
-
-
-        for(int i = 0; i < avarage ; i++){
-            System.out.println();
-
-
-            //if( users1[i] < avarage){
-              //  System.out.println("Wiek jest wiekszy niz srednia");
-            //} else {
-              //  System.out.println("Wiek jest mniejeszy");
-            //}
+        for (int i = 0; i < users1.length; i++) {
+            if (users1[i] <= avarage) {
+                System.out.println("Wiek jest mniejszy niz srednia");
+            }
         }
     }
-
 }

@@ -10,7 +10,7 @@ public class Grades {
     }
 
     public void add(int value){
-        if (this.size == 10) {
+        if (this.size == grades.length) {
             return;
         }
         this.grades[this.size] = value;
@@ -21,7 +21,7 @@ public class Grades {
         if (this.size > 0) {
             return this.grades[this.size - 1]; //nie można sie odwołac do - elemntu tablicy
         } else {
-            return -1;
+            return 0;
         }
     }
 
