@@ -10,7 +10,6 @@ public class Notebook {
     public int ram;
     public String model;
 
-
     public Notebook(int weight, int price, int year, int ram, String model) {
         this.weight = weight;
         this.price = price;
