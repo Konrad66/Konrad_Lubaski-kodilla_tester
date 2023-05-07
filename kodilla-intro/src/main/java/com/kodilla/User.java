@@ -10,10 +10,6 @@ public class User {
         this.age = age;
     }
 
-
-
-
-
     public static void main(String[] args) {
 
         User Konrad = new User("Konrad", 24);
