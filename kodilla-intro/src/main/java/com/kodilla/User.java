@@ -19,22 +19,22 @@ public class User {
 
 
         User[] users = {Konrad, Wiktoria, Artur, Monika};
-        int[] users1 = {24, 22, 26, 23};
+        //int[] users1 = {24, 22, 26, 23};
 
-
-        int numberOfElements = users1.length;
+        int numberOfElements = users.length;
 
         int result = 0;
-        for (int i = 0; i < users1.length; i++) {
-            result = result + users1[i];
+        for (int i = 0; i < users.length; i++) {
+            result = result + users[i].age;
         }
-        int avarage = result / users1.length;
+        int avarage = result / users.length;
         System.out.println("Avarage of age is: " + avarage);
 
 
-        for (int i = 0; i < users1.length; i++) {
-            if (users1[i] <= avarage) {
-                System.out.println("Wiek jest mniejszy niz srednia");
+        for (int i = 0; i < users.length; i++) {
+            if (users[i].age <= avarage) {
+                System.out.println("Wiek jest mniejszy niz srednia " + users[i].name);
+
             }
         }
     }
