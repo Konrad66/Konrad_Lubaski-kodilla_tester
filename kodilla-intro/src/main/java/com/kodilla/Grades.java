@@ -11,9 +11,9 @@ public class Grades {
 
     public void add(int value){
         if (this.size == grades.length) {
-            return;
+            return;  //przerwanie działania
         }
-        this.grades[this.size] = value;
+        this.grades[this.size = 0] = value;
         this.size++;
     }
 
