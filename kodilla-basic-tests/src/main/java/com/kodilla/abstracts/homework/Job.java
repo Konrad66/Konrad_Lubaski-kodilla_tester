@@ -1,4 +1,4 @@
-package com.kodilla.abstracts.homewrok2;
+package com.kodilla.abstracts.homework;
 
 public abstract class Job {
     private int salary;
