@@ -16,16 +16,13 @@ public class Application {
 
 
 
+        Job builder = new Builder(2500, "Building house");
+        Person person = new Person("Konrad", 25, builder);
+        person.displayResponsibilities();
 
-        Builder builder = new Builder();
-        Lawyer lawyer = new Lawyer();
-        Person person = new Person("Konrad", 24, "Builder");
-        person.displayFirsName();
-        builder.displayResponsibilities();
-        builder.displaySalary();
-        Person person1 = new Person("Wiktoria", 21, "Lawyer");
-        person1.displayFirsName();
-        lawyer.displayResponsibilities();
-        lawyer.displaySalary();
+
+        Job lawyer = new Lawyer(600, "knows the penal code.");
+        Person person1 = new Person("Beata", 38, lawyer);
+        person1.displayResponsibilities();
     }
 }
