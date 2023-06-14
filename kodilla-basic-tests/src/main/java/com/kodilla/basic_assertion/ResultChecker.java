@@ -7,4 +7,7 @@ public class ResultChecker {
     public static boolean assertEquals2(double expected, double actual, double delta){
         return expected == actual;
     }
+    public static boolean assertEquals3(double expected, double actual){
+        return expected == actual;
+    }
 }
