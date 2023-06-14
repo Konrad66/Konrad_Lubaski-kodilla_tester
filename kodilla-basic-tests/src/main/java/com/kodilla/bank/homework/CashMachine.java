@@ -12,6 +12,7 @@ public class CashMachine {
     }
 
     public void addTransactions(double value){
+        this.transactionsCount++;
         double[] newTab = new double[this.transactionsCount];
         System.arraycopy(transactions, 0, newTab, 0, transactions.length);
         newTab[this.transactionsCount - 1] = value;
@@ -34,5 +35,7 @@ public class CashMachine {
         }
         return balance;
     }
+
+
 
 }
