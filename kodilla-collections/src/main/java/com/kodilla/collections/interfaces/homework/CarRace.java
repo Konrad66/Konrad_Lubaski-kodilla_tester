@@ -5,6 +5,10 @@ public class CarRace {
 
         Opel opel = new Opel(10);
         doRace(opel);
+        Ford ford = new Ford(7);
+        doRace(ford);
+        Audi audi = new Audi(20);
+        doRace(audi);
     }
 
     private static void doRace(Car car){

@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CashMachineTestSuite {
 
     private CashMachine cashMachine = new CashMachine();
+
     @Test //test sprawdzającu rozmiar tablicy
     public void shouldHaveZeroLength() {
         double[] transactions = cashMachine.getTransactions();
@@ -33,5 +34,15 @@ public class CashMachineTestSuite {
         double balance = cashMachine.getBalance();
         System.out.println("ATM balance: " + balance);
 
+    }
+
+    @Test //test sorawdzajacy czt metoda zwróci liczbę wykonanych transakcji
+    public void shouldReturnTransactionCount(){
+        double[] transaction = cashMachine.getTransactions();
+        cashMachine.addTransactions(100.0);
+        cashMachine.addTransactions(-50.0);
+        cashMachine.addTransactions(-20.0);
+        int transactionCount = cashMachine.getTransactionCount();
+        System.out.println("number of transaction" + transactionCount);
     }
 }
