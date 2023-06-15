@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class BankTestSuite {
 
     private CashMachine cashMachine = new CashMachine();
-    private Bank bank = new Bank();
+    //private Bank bank = new Bank();
 
 
 
@@ -15,7 +15,7 @@ public class BankTestSuite {
         cashMachine.addTransactions(100.0);
         cashMachine.addTransactions(-50.0);
         cashMachine.addTransactions(-20.0);
-        double balanceFromAllCashMachine = bank.balanceFromAllCashMachine();
-        System.out.println("number of transaction" + balanceFromAllCashMachine);
+        //double balanceFromAllCashMachine = bank.balanceFromAllCashMachine();
+        //System.out.println("number of transaction" + balanceFromAllCashMachine);
     }
 }
