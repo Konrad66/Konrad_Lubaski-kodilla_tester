@@ -19,4 +19,5 @@ public class Triangle extends Shape {
         int result = a + b + c;
         System.out.println("Triangle area equals: " + result);
     }
+
 }
