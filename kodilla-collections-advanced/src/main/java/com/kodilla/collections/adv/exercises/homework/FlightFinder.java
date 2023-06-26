@@ -19,7 +19,8 @@ public class FlightFinder {
         List<Flight> flights = FlightRepository.getFlightsTable();
         List<Flight> findFlights = new ArrayList<>();
         for (Flight flight : flights)
-            if (arrival.equals(flight.getArrival()));
+            if (arrival.equals(flight.getArrival()))
+                findFlights.add(flight);
         return findFlights;
     }
 }

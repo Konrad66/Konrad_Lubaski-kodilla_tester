@@ -62,6 +62,7 @@ public class CashMachine {
         return sum / numberOfTransactions;
     }
 
+    //metoda zwracajaca srednia wartosc wplaty
     public double getAverageOfPayments() {
         double sum = 0;
         int numberOfTransactions = 0;

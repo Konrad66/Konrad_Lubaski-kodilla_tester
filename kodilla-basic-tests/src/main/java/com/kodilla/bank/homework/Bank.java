@@ -5,7 +5,7 @@ public class Bank {
     private CashMachine[] cashMachines = new CashMachine[0];
     private int numberOfCashMachines;
 
-    public Bank(int numberOfCashMachines) {
+    public Bank() {
         this.numberOfCashMachines = numberOfCashMachines = 0;
     }
 
@@ -17,6 +17,7 @@ public class Bank {
         this.cashMachines = newTab;
     }
 
+    //metoda zwracajaca balans z bankomatow
     public double balanceFromAllCashMachine() {
         double sum = 0;
         for (int i = 0; i < cashMachines.length; i++) {
@@ -25,21 +26,48 @@ public class Bank {
         return sum;
     }
 
-    public double payoutsFromCashMachines() {
-        double sum = 0;
-        for (int i = 0; i < cashMachines.length; i++) {
-            sum += cashMachines[i].getNumberOfPayoutsTransactions();
+    public double payoutsFromCashMachines(){
+        int numberOfPayoutsFromCashMachines = 0;
+        for (int i = 0; i < numberOfCashMachines; i++){
+            if(cashMachines[i].getNumberOfPayoutsTransactions() > 0){
+                numberOfPayoutsFromCashMachines++;
+            }
         }
-        return sum;
+        return numberOfPayoutsFromCashMachines;
     }
 
     public double paymentsFromCashMachines() {
-        double sum = 0;
-        for (int i = 0; i < cashMachines.length; i++) {
-            sum += cashMachines[i].getNumberOfPaymentTransactions();
+        int numberOfPaymentsFromCashMacihnes = 0;
+        for (int i = 0; numberOfCashMachines < i; i++){
+            if(cashMachines[i].getNumberOfPaymentTransactions() > 0){
+                numberOfPaymentsFromCashMacihnes++;
+            }
         }
-        return sum;
+        return numberOfPaymentsFromCashMacihnes;
     }
 
+    public double averageOfPayoutsFromCashMachines(){
+        double sum = 0;
+        int numberOfTransaction = 0;
+        for(int i = 0; numberOfCashMachines > i; i++){
+            if(cashMachines[i].getAverageOfPayouts() < 0){
+                sum += cashMachines[i].getAverageOfPayouts();
+                numberOfTransaction++;
+            }
+        }
+        return sum / numberOfTransaction;
+    }
+
+    public double averageOfPaymentsFromCashMachines(){
+        double sum = 0;
+        int numberOfTransaction = 0;
+        for(int i = 0; numberOfCashMachines > i; i++){
+            if(cashMachines[i].getAverageOfPayments() > 0){
+                sum += cashMachines[i].getAverageOfPayments();
+                numberOfTransaction++;
+            }
+        }
+        return sum / numberOfTransaction;
+    }
 
 }
