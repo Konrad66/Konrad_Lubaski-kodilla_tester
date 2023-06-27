@@ -1,5 +1,6 @@
 package com.kodilla.bank.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,6 +8,7 @@ public class BankTestSuite {
 
     private Bank bank;
 
+    @BeforeEach
     public void setUp(){
         bank = new Bank();
         CashMachine cashMachine1 = new CashMachine();
@@ -27,14 +29,36 @@ public class BankTestSuite {
     public void shouldReturnBalanceFromAllCashMachine(){
         double expectedBalance = -20.0;
         double actualBalance = bank.balanceFromAllCashMachine();
-        assertEquals(expectedBalance, actualBalance);
+        assertEquals(expectedBalance, actualBalance, 0.001);
     }
 
     @Test //test sprawdzajacy liczbe transakcji zwiazanych z wyplata w bankomatach
     public void shouldReturnPayoutsFromCashMachines(){
-        //gg
+        int expected = 2;
+        int actual = bank.payoutsFromCashMachines();
+        assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldReturnPaymentsFromCashMachines(){
+        int expected = 4;
+        double actual = bank.paymentsFromCashMachines();
+        assertEquals(expected, actual, 0.001);
+    }
+
+    @Test
+    public void shouldReturnAverageOfPayoutsFromCashMachines(){
+        double expected = -180.0;
+        double actual = bank.averageOfPayoutsFromCashMachines();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnAverageOfPaymentsFromCashMachines(){
+        double expected = 85.0;
+        double actual = bank.averageOfPaymentsFromCashMachines();
+        assertEquals(expected, actual);
+    }
 
 
 }

@@ -26,7 +26,7 @@ public class Bank {
         return sum;
     }
 
-    public double payoutsFromCashMachines(){
+    public int payoutsFromCashMachines(){
         int numberOfPayoutsFromCashMachines = 0;
         for (int i = 0; i < numberOfCashMachines; i++){
             if(cashMachines[i].getNumberOfPayoutsTransactions() > 0){
@@ -36,14 +36,12 @@ public class Bank {
         return numberOfPayoutsFromCashMachines;
     }
 
-    public double paymentsFromCashMachines() {
-        int numberOfPaymentsFromCashMacihnes = 0;
-        for (int i = 0; numberOfCashMachines < i; i++){
-            if(cashMachines[i].getNumberOfPaymentTransactions() > 0){
-                numberOfPaymentsFromCashMacihnes++;
-            }
+    public int paymentsFromCashMachines() {
+        int numberOfPaymentsFromCashMachines = 0;
+        for (int i = 0; i < numberOfCashMachines; i++) {
+            numberOfPaymentsFromCashMachines += cashMachines[i].getNumberOfPaymentTransactions();
         }
-        return numberOfPaymentsFromCashMacihnes;
+        return numberOfPaymentsFromCashMachines;
     }
 
     public double averageOfPayoutsFromCashMachines(){
