@@ -29,7 +29,7 @@ public class UsersManager {
         List<Integer> age = UsersRepository.getUserList()
                 .stream()
                 .filter(user -> user.getAge() >= 45)
-                .map(UsersManager::getUserAge)
+                .map(user -> user.getAge())
                 .collect(Collectors.toList());
         return age;
     }
@@ -38,20 +38,12 @@ public class UsersManager {
         List<Integer> userInfo = UsersRepository.getUserList()
                 .stream()
                 .filter(user -> user.getNumberOfPost() <= 10)
-                .map(UsersManager::getUserPosts)
+                .map(user -> user.getNumberOfPost())
                 .collect(Collectors.toList());
         return  userInfo;
     }
 
     public static String getUserName(User user) {
         return user.getUserName();
-    }
-
-    public static int getUserAge(User user){
-        return user.getAge();
-    }
-
-    public static int getUserPosts(User user){
-        return user.getNumberOfPost();
     }
 }
