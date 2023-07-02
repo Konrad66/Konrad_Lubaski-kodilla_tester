@@ -11,39 +11,36 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ForumStatsTestSuite {
 
-    @BeforeEach
-    public void setUp(){
-
-    }
-/*
     @Test
     public void testingFirstMethod() {
         //given
         List<User> users = new ArrayList<>();
-        users.add(new User("Konrad", 24, 3, "Student"));
-        users.add(new User("Wiktoria", 21, 7, "Student"));
-        users.add(new User("Martin", 45, 185, "Doctor"));
-        users.add(new User("Sylwia", 41, 0, "Lawyer"));
+        users.add(new User("Walter White", 50, 7, "Chemists"));
+        users.add(new User("Jessie Pinkman", 25, 4648, "Sales"));
+        users.add(new User("Tuco Salamanca", 34, 116, "Manager"));
+        users.add(new User("Gus Firing", 49, 0, "Board"));
+        users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
+        users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         //when
         double result = ForumStats.averageNumberOfPostsForOneGroup();
         //then
-        assertEquals(92.5,result);
+        assertEquals(2.25, result);
     }
 
     @Test
-    public void testingSecondMethod(){
+    public void testingSecondMethod() {
         //given
         List<User> users = new ArrayList<>();
-        users.add(new User("Konrad", 24, 3, "Student"));
-        users.add(new User("Wiktoria", 21, 7, "Student"));
-        users.add(new User("Martin", 45, 185, "Doctor"));
-        users.add(new User("Sylwia", 41, 0, "Lawyer"));
+        users.add(new User("Walter White", 50, 7, "Chemists"));
+        users.add(new User("Jessie Pinkman", 25, 4648, "Sales"));
+        users.add(new User("Tuco Salamanca", 34, 116, "Manager"));
+        users.add(new User("Gus Firing", 49, 0, "Board"));
+        users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
+        users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         //when
-        double result = ForumStats.averageNumberOfPostsForOneGroup();
+        double result = ForumStats.averageNumberOfPostsForSecondGroup();
         //then
-        assertEquals(2.25,result);
+        assertEquals(2382, result);
 
     }
-    */
-
 }
