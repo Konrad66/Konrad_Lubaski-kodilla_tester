@@ -30,9 +30,21 @@ class ApplicationTestSuite {
         assertEquals(6, students.size());
     }
 
-   // @Test
-   // public void testSort(){
-        //List<Student> students = createSampleStudentList().stream().filter(student -> student.equals(new Student("Wiktoria", new Teacher("Aaron")))).collect(Collectors.toList());
-        //assertEquals(1, students.size());
-   // }
+    @Test
+    public void testStudentExistOnList(){
+        List<Student> students = createSampleStudentList()
+                .stream()
+                .filter(student -> student.equals(new Student("Wiktoria", new Teacher("Aaron"))))
+                .collect(Collectors.toList());
+        assertEquals(1, students.size());
+    }
+
+    @Test
+    public void testStudentNotExistOnList(){
+        List<Student> students = createSampleStudentList()
+                .stream()
+                .filter(student -> student.equals(new Student("Przemek", new Teacher(null))))
+                .collect(Collectors.toList());
+        assertEquals(0, students.size());
+    }
 }

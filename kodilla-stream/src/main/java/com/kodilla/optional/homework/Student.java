@@ -1,5 +1,7 @@
 package com.kodilla.optional.homework;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private Teacher teacher;
@@ -20,5 +22,17 @@ public class Student {
     @Override
     public String toString() {
         return "Student name: " + name + ", Teacher name: " + teacher;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+        return Objects.equals(name, student.name) && Objects.equals(teacher, student.teacher);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, teacher);
     }
 }
