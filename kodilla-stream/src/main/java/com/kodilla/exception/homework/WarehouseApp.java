@@ -8,19 +8,19 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("124"));
         warehouse.addOrder(new Order("358"));
 
-        try{ //looking for existing order
+        try { //looking for existing order
             Order isOrderInWarehouseApp = warehouse.getOrder("123");
             System.out.println("Order status: " + isOrderInWarehouseApp.getNumber());
-        } catch (OrderDoesntExistException e){
+        } catch (OrderDoesntExistException e) {
             System.out.println("Sorry this order doesn't exist.");
         } finally {
             System.out.println("Thank you for using our warehouseApp");
         }
 
-        try{ //looking for doesn't existing order
+        try { //looking for doesn't existing order
             Order isOrderInWarehouseApp = warehouse.getOrder("654");
             System.out.println("Order status: " + isOrderInWarehouseApp);
-        } catch (OrderDoesntExistException e){
+        } catch (OrderDoesntExistException e) {
             System.out.println("Sorry this order doesn't exist.");
         } finally {
             System.out.println("Thank you for using our warehouseApp");

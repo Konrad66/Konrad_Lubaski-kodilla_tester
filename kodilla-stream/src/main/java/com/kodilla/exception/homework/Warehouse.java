@@ -6,7 +6,8 @@ import java.util.List;
 public class Warehouse {
 
     private List<Order> orders = new ArrayList<>();
-    public void addOrder(Order order){
+
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
