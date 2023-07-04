@@ -7,7 +7,7 @@ import java.util.function.BooleanSupplier;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarehouseAppTestSuite {
-    
+
     @Test
     public void testWarehouseAppTestSuite_WithException() {
         //givenn
