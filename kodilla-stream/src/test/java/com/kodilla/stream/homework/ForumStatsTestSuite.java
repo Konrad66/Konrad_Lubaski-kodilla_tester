@@ -24,7 +24,7 @@ class ForumStatsTestSuite {
         //when
         double result = ForumStats.averageNumberOfPostsForOneGroup();
         //then
-        assertEquals(2.25, result);
+        assertEquals(2.25, result, 0.001);
     }
 
     @Test
@@ -40,7 +40,7 @@ class ForumStatsTestSuite {
         //when
         double result = ForumStats.averageNumberOfPostsForSecondGroup();
         //then
-        assertEquals(2382, result);
+        assertEquals(2382, result, 0.001);
 
     }
 }
