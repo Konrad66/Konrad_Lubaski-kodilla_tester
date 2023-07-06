@@ -15,16 +15,6 @@ class StringValidatorTestSuite {
     private StringValidator validator = new StringValidator();
 
 
-    @Test
-    public void shouldReturnFalseIfStringIsNotEmpty() {
-        assertFalse(validator.isBlank("test"));
-    }
-
-    @Test
-    public void shouldReturnTrueIfStringIsNull() {
-        assertTrue(validator.isBlank(null));
-    }
-
     @ParameterizedTest
     @NullSource
     public void shouldReturnTrueIfStringIsNull(String text) {
