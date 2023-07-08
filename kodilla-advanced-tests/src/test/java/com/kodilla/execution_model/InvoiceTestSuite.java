@@ -1,7 +1,6 @@
 package com.kodilla.execution_model;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,6 +40,21 @@ class InvoiceTestSuite {
     public void shouldReturn0SizeOfList(){
         invoice.clear();
         assertEquals(0, invoice.getSize());
+    }
+
+    @AfterEach
+    public void resetValues() {
+        System.out.println("Resetting values...");
+    }
+
+    @BeforeAll
+    public static void displayIntroMessage() {
+        System.out.println("Starting testing");
+    }
+
+    @AfterAll
+    public static void displayGoodByeMessage() {
+        System.out.println("Finishing testing");
     }
 
 }
