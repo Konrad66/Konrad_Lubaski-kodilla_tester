@@ -1,12 +1,14 @@
 package com.kodilla.execution_model.homework;
 
+import java.util.Date;
+
 public class Order {
 
     private double price;
-    private String time;
+    private Date time;
     private String login;
 
-    public Order(double price, String time, String login) {
+    public Order(double price, Date time, String login) {
         this.price = price;
         this.time = time;
         this.login = login;
@@ -16,7 +18,7 @@ public class Order {
         return price;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
