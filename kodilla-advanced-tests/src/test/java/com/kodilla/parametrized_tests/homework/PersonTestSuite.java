@@ -12,16 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTestSuite {
 
 
-    private static Stream<Arguments> testGetBMI() {
-        return Stream.of(
-                Arguments.of(1.76, 85, "Overweight"),
-                Arguments.of(1.63, 57, "Normal (healthy weight)"),
-                Arguments.of(1.78, 80, "Normal (healthy weight)")
-                );
-    }
-
     @ParameterizedTest
-    @MethodSource(value = "com.kodilla.parametrized_tests.homework.Person#getBMI")
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.BMISource#testGetBMI")
     public void testGetBMI(double height, double weight, String expected){
         Person person = new Person(height, weight);
         String result = person.getBMI();
@@ -29,6 +21,7 @@ class PersonTestSuite {
     }
 
 
+    //przykładowy test
     @Test
     public void example(){
         Person person = new Person(1.76,85);
