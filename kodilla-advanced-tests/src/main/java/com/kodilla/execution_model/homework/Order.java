@@ -1,6 +1,7 @@
 package com.kodilla.execution_model.homework;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Order {
 
@@ -33,5 +34,17 @@ public class Order {
                 ", time='" + time + '\'' +
                 ", login='" + login + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order order)) return false;
+        return Double.compare(order.price, price) == 0 && Objects.equals(time, order.time) && Objects.equals(login, order.login);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, time, login);
     }
 }
