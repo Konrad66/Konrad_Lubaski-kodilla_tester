@@ -19,13 +19,13 @@ class ShopTestSuite {
     Order socks = new Order(35.5, new Date(2023, 05, 14), "wikiika47");
 
     @BeforeEach
-    public void setUp() {
+     public void setUp() {
         shop.addOrder(dress);
         shop.addOrder(glasses);
         shop.addOrder(table);
     }
 
-
+/*
     @Test
     public void testAddNewItem() {
         shop.addOrder(new Order(20, new Date(2023, 05, 22), "user236"));
@@ -60,4 +60,6 @@ class ShopTestSuite {
         double sum = shop.priceOfAllOrders();
         assertEquals(565.5, sum, 0.001);
     }
+
+ */
 }

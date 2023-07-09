@@ -1,5 +1,6 @@
 package com.kodilla.parametrized_tests.homework;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -32,6 +33,22 @@ class GamblingMachineTestSuite {
         assertTrue(result >= 0 && result <= 6);
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {"5;10;15;20;25"})
+    public void checkIfTheMethodThrowsAnException(String numbers) throws InvalidNumbersException {
+        String[] numbersAssString = numbers.split(";");
+        Set<String> setStringNumbers = new HashSet<>();
+        for (String number : numbersAssString) {
+            setStringNumbers.add(number);
+        }
+
+        Set<Integer> userNumber = setStringNumbers
+                .stream()
+                .mapToInt(Integer::parseInt)
+                .boxed()
+                .collect(Collectors.toSet());
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(userNumber));
+    }
 
 
 }

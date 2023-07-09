@@ -24,6 +24,7 @@ public class Shop {
         return 0;
     }
 
+    /*
     public List<Order> getOrderByRangeOfDate(Date startDate, Date endDate){
         return ;
     }
@@ -31,6 +32,7 @@ public class Shop {
     public List<Order> getOrderByRangeOfMaxAndMin(double minPrice, double maxPrice){
         return ;
     }
+*/
 
 
 }
