@@ -42,6 +42,4 @@ public class WeatherService {
             locationsMap.remove(location);
         }
     }
-
-
 }
