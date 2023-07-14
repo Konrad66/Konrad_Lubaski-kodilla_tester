@@ -27,11 +27,11 @@ public class Calculator {
     }
 
     public double divide(double a, double b) {
-        if(b == 0){
+        if (b == 0) {
             System.out.println("You can't divide by zero!");
         }
         double result = a / b;
-        return displayValue.display(result);
+        displayValue.display(result);
+        return result;
     }
-
 }
