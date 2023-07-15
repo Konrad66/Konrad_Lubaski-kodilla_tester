@@ -1,5 +1,7 @@
 package com.kodilla.mockito.homework;
 
+import com.kodilla.mockito.Client;
+
 import java.util.*;
 
 public class WeatherService {
@@ -33,13 +35,17 @@ public class WeatherService {
         }
     }
 
-    public void removePersonFromAllLocation(Person person, Location location) {
-        this.locationsMap.get(location).remove(person);
+    public void removePersonFromAllLocation(Person person) {
+       Set<Location> locations = new HashSet<>();
+      //  if (locationsMap.containsKey(person)) {
+       //     this.locationsMap.get(person).remove(locations);
+       // }
+
+        this.locationsMap.get(person).remove(locations);
     }
 
-    public void removeLocation(Location location) {
-        if (locationsMap.containsValue(location)){
-            locationsMap.remove(location);
-        }
+
+    public void removeLocation() {
+        locationsMap.clear();
     }
 }
