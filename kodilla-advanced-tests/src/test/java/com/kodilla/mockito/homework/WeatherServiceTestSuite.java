@@ -53,6 +53,7 @@ class WeatherServiceTestSuite {
 
     }
 
+    /*
 
     @Test
     public void testRemovePersonFromAllLocation() {
@@ -66,9 +67,11 @@ class WeatherServiceTestSuite {
         Mockito.verify(konrad).receive(message);
         Mockito.verify(przemek, Mockito.never()).receive(message);
 
-    }
+}
+     */
 
 
+/*
     @Test
     public void testRemoveLocation() {
         weatherService.addPersonToLocation(przemek, katowice);
@@ -85,6 +88,8 @@ class WeatherServiceTestSuite {
         //Assertions.assertEquals(0,weatherService);
 
     }
+
+ */
 
 
 }

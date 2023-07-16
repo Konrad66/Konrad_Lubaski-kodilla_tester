@@ -27,15 +27,15 @@ public class CarConfiguration {
     }
 
     /*
+
     @Bean
-    public boolean setHeadLightsBasedOnTime(Car car, int hour) {
+    public boolean setHeadLightsBasedOnTime(int hour) {
         if (hour >= 20 || hour >= 6) {
             System.out.println("lights are on");;
         }
-        return  car.hasHeadlightsTurnedOn();
+        return  car.hasHeadlightsTurnedOn(hour);
     }
 
      */
-
 
 }
