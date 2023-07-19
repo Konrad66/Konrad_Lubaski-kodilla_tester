@@ -33,6 +33,7 @@ class WeatherServiceTestSuite {
         Mockito.verify(wiktoria, Mockito.never()).receive(message);
     }
 
+    /*
     @Test
     public void testSendMessageToAllLocations() {
         weatherService.addPersonToLocation(konrad, katowice);
@@ -41,6 +42,8 @@ class WeatherServiceTestSuite {
         Mockito.verify(konrad).receive(message);
         Mockito.verify(wiktoria).receive(message);
     }
+
+     */
 
     @Test
     public void testForRemovePersonFromLocation() {

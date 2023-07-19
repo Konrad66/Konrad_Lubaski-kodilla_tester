@@ -9,33 +9,36 @@ import java.util.Random;
 @Configuration
 public class CarConfiguration {
 
-    @Bean
-    public Car getCarBasedONSeasons() {
-        Car car;
-        LocalDateTime currentTime = LocalDateTime.now();
-        int month = currentTime.getMonthValue();
-
-        if (month >= 3 && month <= 5) {
-            return car = new Sedan();
-        } else if (month >= 6 && month <= 8) {
-            return car = new Cabrio();
-        } else if (month >= 9 && month <= 11) {
-            return car = new Sedan();
-        } else {
-            return car = new SUV();
-        }
-    }
-
     /*
 
     @Bean
-    public boolean setHeadLightsBasedOnTime(int hour) {
-        if (hour >= 20 || hour >= 6) {
-            System.out.println("lights are on");;
+    public Car getCarBasedONSeasons() {
+        Car car;
+        if (getCarBasedONSeasons >= 3 && getCarBasedONSeasons <= 5) {
+            return car = new Sedan(true);
+        } else if (getCarBasedONSeasons >= 6 && getCarBasedONSeasons <= 8) {
+            return car = new Cabrio(true);
+        } else if (getCarBasedONSeasons >= 9 && getCarBasedONSeasons <= 11) {
+            return car = new Sedan(true);
+        } else {
+            return car = new SUV(true);
         }
-        return  car.hasHeadlightsTurnedOn(hour);
+    }
+
+    @Bean
+    public SUV createCar() {
+        return new SUV(true);
+    }
+
+    @Bean
+    public int setHeadLightsBasedOnTime() {
+        LocalDateTime currentTime = LocalDateTime.now();
+        int hour = currentTime.getHour();
+        if (hour >= 20 || hour >= 6) {
+            return setHeadLightsBasedOnTime;
+        }
+        return setHeadLightsBasedOnTime;
     }
 
      */
-
 }

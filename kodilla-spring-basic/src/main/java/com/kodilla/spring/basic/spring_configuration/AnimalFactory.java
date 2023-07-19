@@ -13,7 +13,6 @@ public class AnimalFactory {
         return new Dog();
     }
 
-
     @Bean
     public Animal randomAnimal() {
         Animal animal;

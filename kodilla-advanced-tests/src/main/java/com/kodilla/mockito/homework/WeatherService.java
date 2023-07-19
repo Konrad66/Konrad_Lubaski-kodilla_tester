@@ -6,6 +6,7 @@ import java.util.*;
 
 public class WeatherService {
 
+    //private  Map<Location, Set<Person>>
     private Map<Person, Set<Location>> locationsMap = new HashMap<>();
 
     public void addPersonToLocation(Person person, Location location) {
