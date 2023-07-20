@@ -2,43 +2,39 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.time.LocalDateTime;
-import java.util.Random;
+import java.time.LocalTime;
 
 @Configuration
 public class CarConfiguration {
 
-    /*
-
     @Bean
-    public Car getCarBasedONSeasons() {
-        Car car;
-        if (getCarBasedONSeasons >= 3 && getCarBasedONSeasons <= 5) {
-            return car = new Sedan(true);
-        } else if (getCarBasedONSeasons >= 6 && getCarBasedONSeasons <= 8) {
-            return car = new Cabrio(true);
-        } else if (getCarBasedONSeasons >= 9 && getCarBasedONSeasons <= 11) {
-            return car = new Sedan(true);
+    @Scope("prototype")
+    public Car getCar(String season, LocalTime hour) {
+        boolean lightsOn = hour.isAfter(LocalTime.of(20, 0, 0)) || hour.isBefore(LocalTime.of(6, 0, 1));
+        if(season.equals("Summer")){
+            return new Cabrio(lightsOn);
+        } else if (season.equals("Spring") || season.equals("Autumn")) {
+            return new Sedan(lightsOn);
         } else {
-            return car = new SUV(true);
+            return new SUV(lightsOn);
         }
     }
-
     @Bean
-    public SUV createCar() {
+    public SUV createSUV() {
         return new SUV(true);
     }
 
     @Bean
-    public int setHeadLightsBasedOnTime() {
-        LocalDateTime currentTime = LocalDateTime.now();
-        int hour = currentTime.getHour();
-        if (hour >= 20 || hour >= 6) {
-            return setHeadLightsBasedOnTime;
-        }
-        return setHeadLightsBasedOnTime;
+    public Cabrio createCabrio() {
+        return new Cabrio(true);
     }
 
-     */
+    @Bean
+    public Sedan createSedan() {
+        return new Sedan(true);
+    }
+
 }
