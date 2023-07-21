@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 
 class WeatherServiceTestSuite {
 
+    /*
     private WeatherService weatherService = new WeatherService();
     private Person konrad = Mockito.mock(Person.class);
     private Person wiktoria = Mockito.mock(Person.class);
@@ -43,7 +44,6 @@ class WeatherServiceTestSuite {
         Mockito.verify(wiktoria).receive(message);
     }
 
-     */
 
     @Test
     public void testForRemovePersonFromLocation() {
@@ -56,7 +56,6 @@ class WeatherServiceTestSuite {
 
     }
 
-    /*
 
     @Test
     public void testRemovePersonFromAllLocation() {
@@ -71,10 +70,10 @@ class WeatherServiceTestSuite {
         Mockito.verify(przemek, Mockito.never()).receive(message);
 
 }
-     */
 
 
-/*
+
+
     @Test
     public void testRemoveLocation() {
         weatherService.addPersonToLocation(przemek, katowice);
@@ -92,7 +91,10 @@ class WeatherServiceTestSuite {
 
     }
 
- */
+     */
+
+
+
 
 
 }
