@@ -7,7 +7,6 @@ import org.mockito.Mockito;
 
 class WeatherServiceTestSuite {
 
-    /*
     private WeatherService weatherService = new WeatherService();
     private Person konrad = Mockito.mock(Person.class);
     private Person wiktoria = Mockito.mock(Person.class);
@@ -18,83 +17,64 @@ class WeatherServiceTestSuite {
     private Message message = Mockito.mock(Message.class);
     private Location warsaw = Mockito.mock(Location.class);
 
-
     @Test
     public void addPersonToLocation() {
-        weatherService.addPersonToLocation(konrad, katowice);
+        weatherService.addLocationToPerson(katowice, konrad);
         Mockito.verify(konrad, Mockito.times(1));
     }
-
-    @Test
-    public void testSendMessageToOneLocation() {
-        weatherService.addPersonToLocation(konrad, katowice);
-        weatherService.addPersonToLocation(wiktoria, wroclaw);
-        weatherService.sendMessageToOneLocation(message, katowice);
-        Mockito.verify(konrad).receive(message);
-        Mockito.verify(wiktoria, Mockito.never()).receive(message);
-    }
-
-    /*
+/*
     @Test
     public void testSendMessageToAllLocations() {
-        weatherService.addPersonToLocation(konrad, katowice);
-        weatherService.addPersonToLocation(wiktoria, wroclaw);
+        weatherService.addLocationToPerson(katowice, konrad);
+        weatherService.addLocationToPerson(wroclaw, wiktoria);
         weatherService.sendMessage(message);
         Mockito.verify(konrad).receive(message);
         Mockito.verify(wiktoria).receive(message);
     }
 
+ */
+
+    @Test
+    public void testSendMessageToOneLocation() {
+        weatherService.addLocationToPerson(katowice, konrad);
+        weatherService.addLocationToPerson(wroclaw, wiktoria);
+        weatherService.sendMessageToLocation(message, katowice);
+        Mockito.verify(konrad).receive(message);
+        Mockito.verify(wiktoria, Mockito.never()).receive(message);
+    }
 
     @Test
     public void testForRemovePersonFromLocation() {
-        weatherService.addPersonToLocation(konrad, katowice);
-        weatherService.addPersonToLocation(wiktoria, katowice);
+        weatherService.addLocationToPerson(katowice, konrad);
+        weatherService.addLocationToPerson(wroclaw, wiktoria);
         weatherService.removePersonFromLocation(wiktoria, katowice);
-        weatherService.sendMessageToOneLocation(message, katowice);
+        weatherService.sendMessageToLocation(message, katowice);
         Mockito.verify(konrad).receive(message);
         Mockito.verify(wiktoria, Mockito.never()).receive(message);
-
     }
-
-
+/*
     @Test
     public void testRemovePersonFromAllLocation() {
-        weatherService.addPersonToLocation(konrad, katowice);
-        weatherService.addPersonToLocation(przemek, katowice);
-        weatherService.addPersonToLocation(konrad, wroclaw);
-        weatherService.addPersonToLocation(przemek, wroclaw);
-        weatherService.addPersonToLocation(przemek, warsaw);
+        weatherService.addLocationToPerson(warsaw, konrad);
+        weatherService.addLocationToPerson(warsaw, przemek);
+        weatherService.addLocationToPerson(katowice, konrad);
         weatherService.removePersonFromAllLocation(przemek);
         weatherService.sendMessage(message);
-        Mockito.verify(konrad).receive(message);
         Mockito.verify(przemek, Mockito.never()).receive(message);
+    }
 
-}
-
-
-
+ */
 
     @Test
     public void testRemoveLocation() {
-        weatherService.addPersonToLocation(przemek, katowice);
-        weatherService.addPersonToLocation(konrad, wroclaw);
-        weatherService.addPersonToLocation(wiktoria, warsaw);
+        weatherService.addLocationToPerson(katowice, przemek);
+        weatherService.addLocationToPerson(wroclaw, konrad);
+        weatherService.addLocationToPerson(warsaw, wiktoria);
+        weatherService.removeLocation(warsaw);
+        weatherService.sendMessage(message);
 
-        weatherService.removeLocation();
-
-        //Mockito.verify(katowice);
-        Mockito.verify(wroclaw);
-        Mockito.verify(katowice);
-        Mockito.verify(warsaw);
-
-        //Assertions.assertEquals(0,weatherService);
-
+        Mockito.verify(przemek).receive(message);
+        Mockito.verify(konrad).receive(message);
+        Mockito.verify(wiktoria, Mockito.never()).receive(message);
     }
-
-     */
-
-
-
-
-
 }

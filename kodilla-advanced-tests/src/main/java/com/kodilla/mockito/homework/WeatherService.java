@@ -6,62 +6,42 @@ import java.util.*;
 
 public class WeatherService {
 
-    /*
-    private  Map<Location, Set<Person>> locationsMap = new HashMap<>();
-    //private Map<Person, Set<Location>> locationsMap = new HashMap<>();
+    private Map<Location, Set<Person>> locationMap = new HashMap<>();
 
-    public void addPersonToLocation(Person person, Location location) {
+    public void addLocationToPerson(Location location, Person person) {
         Set<Person> personSet = new HashSet<>();
-        if (locationsMap.containsKey(location)) {
-            personSet = locationsMap.get(location);
+        if (locationMap.containsValue(person)) {
+            personSet = locationMap.get(person);
         }
         personSet.add(person);
-        locationsMap.put(location, personSet);
+        locationMap.put(location, personSet);
     }
-
-
-    public void addPersonToLocation(Person person, Location location) {
-        Set<Person> personSet = new HashSet<>();
-        if (locationsMap.containsKey(location)) {
-            personSet = locationsMap.get(location);
-        }
-        personSet.add(person);
-        locationsMap.put(location, personSet);
-    }
-
-
 
     public void sendMessage(Message message) {
-        this.locationsMap.forEach((person, locations) -> person.receive(message));
+        this.locationMap.forEach((location, personSet) -> personSet.forEach(person -> person.receive(message)));
     }
 
-    public void sendMessageToOneLocation(Message message, Location location) {
-        locationsMap.forEach((person, locations) -> {
-            if (locations.contains(location)) {
-                person.receive(message);
+    public void sendMessageToLocation(Message message, Location location) {
+        this.locationMap.forEach((location1, personSet) -> {
+            if (location1 == location) {
+                personSet.forEach(person -> person.receive(message));
             }
         });
     }
 
     public void removePersonFromLocation(Person person, Location location) {
-        if (locationsMap.containsKey(person)) {
-            locationsMap.get(person).remove(location);
+        if (locationMap.containsValue(person)) {
+            locationMap.get(location).remove(person);
         }
     }
 
     public void removePersonFromAllLocation(Person person) {
-       Set<Location> locations = new HashSet<>();
-      //  if (locationsMap.containsKey(person)) {
-       //     this.locationsMap.get(person).remove(locations);
-       // }
-
-        this.locationsMap.get(person).remove(locations);
+        for (Map.Entry<Location, Set<Person>> result : locationMap.entrySet()) {
+            result.getValue().remove(person);
+        }
     }
 
-
-    public void removeLocation() {
-        locationsMap.clear();
+    public void removeLocation(Location location) {
+        this.locationMap.remove(location);
     }
-    */
-
 }
