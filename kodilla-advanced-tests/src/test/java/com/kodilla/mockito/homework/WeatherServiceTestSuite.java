@@ -14,15 +14,16 @@ class WeatherServiceTestSuite {
 
     private Location katowice = Mockito.mock(Location.class);
     private Location wroclaw = Mockito.mock(Location.class);
-    private Message message = Mockito.mock(Message.class);
     private Location warsaw = Mockito.mock(Location.class);
+    private Message message = Mockito.mock(Message.class);
 
     @Test
     public void addPersonToLocation() {
         weatherService.addLocationToPerson(katowice, konrad);
-        Mockito.verify(konrad, Mockito.times(1));
+        weatherService.sendMessageToLocation(message, katowice);
+        Mockito.verify(konrad, Mockito.times(1)).receive(message);
     }
-/*
+
     @Test
     public void testSendMessageToAllLocations() {
         weatherService.addLocationToPerson(katowice, konrad);
@@ -32,7 +33,6 @@ class WeatherServiceTestSuite {
         Mockito.verify(wiktoria).receive(message);
     }
 
- */
 
     @Test
     public void testSendMessageToOneLocation() {
@@ -52,7 +52,7 @@ class WeatherServiceTestSuite {
         Mockito.verify(konrad).receive(message);
         Mockito.verify(wiktoria, Mockito.never()).receive(message);
     }
-/*
+
     @Test
     public void testRemovePersonFromAllLocation() {
         weatherService.addLocationToPerson(warsaw, konrad);
@@ -63,7 +63,6 @@ class WeatherServiceTestSuite {
         Mockito.verify(przemek, Mockito.never()).receive(message);
     }
 
- */
 
     @Test
     public void testRemoveLocation() {

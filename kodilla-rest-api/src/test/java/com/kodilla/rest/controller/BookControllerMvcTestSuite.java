@@ -1,6 +1,5 @@
 package com.kodilla.rest.controller;
 
-//import com.google.gson.Gson;
 import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.hamcrest.Matchers;
@@ -47,9 +46,7 @@ public class BookControllerMvcTestSuite {
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
     }
 
-
-/*
-
+    /*
     @Test
     void shouldAddBook() throws Exception{
         //given
@@ -65,7 +62,8 @@ public class BookControllerMvcTestSuite {
                 .andExpect(status().is(200));
     }
 
- */
+     */
+
 
 }
 
