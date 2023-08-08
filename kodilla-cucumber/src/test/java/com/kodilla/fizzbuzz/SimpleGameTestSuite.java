@@ -13,33 +13,19 @@ class SimpleGameTestSuite {
     private int number;
     private String answer;
 
-    @Given("number is divisible by three")
-    public void number_is_divisible_by_three() {
-        this.number = 3;
+    @Given("number is {int} of value greater than zero")
+    public void number_is_of_value_greater_than_zero(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        this.number = int1;
     }
-
-    @Given("number is divisible by five")
-    public void number_is_divisible_by_five() {
-        this.number = 5;
-    }
-
-    @Given("number is divisible by three and five")
-    public void number_is_divisible_by_three_and_five() {
-        this.number = 15;
-    }
-
-    @Given("number isn't divisible by three and five")
-    public void number_isnt_divisible_by_three_and_five() {
-        this.number = 6;
-    }
-
     @When("I pass a number")
-    public void I_pass_a_number() {
-        this.answer = simpleGame(this.number);
+    public void i_pass_a_number() {
+        // Write code here that turns the phrase above into concrete actions
+        this.answer = simpleGame(number);
     }
-
-    @Then("I should be told {string}")
-    public void i_should_be_told(String string) {
+    @Then("I should be told the correct {string}")
+    public void i_should_be_told_the_correct(String string) {
+        // Write code here that turns the phrase above into concrete actions
         assertEquals(string, this.answer);
     }
 }

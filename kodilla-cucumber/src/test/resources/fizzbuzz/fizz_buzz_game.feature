@@ -7,7 +7,7 @@ Feature: Fizz Buzz game
     Then I should be told the correct <answer>
     Examples:
       | number                           | answer     |
-      | divisible by three               | "Fizz"     |
-      | divisible by five                | "Buzz"     |
-      | divisible by both three and five | "FizzBuzz" |
-      | not divisible by both            | "None"     |
+      | 3               | "Fizz"     |
+      | 5                | "Buzz"     |
+      | 15 | "FizzBuzz" |
+      | 2         | "None"     |
